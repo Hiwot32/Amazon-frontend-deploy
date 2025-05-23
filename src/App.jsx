@@ -1,12 +1,13 @@
-import { useState } from 'react'
-import Home from './components/Home/Home'
+import React from 'react'
+import Routings from './components/Routings/Routings.jsx'
 
 
 function App() {
 
   return (
     <>
-      <Home />
+      <Routings />
+      
     </>
   )
 }

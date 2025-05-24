@@ -5,8 +5,8 @@ export const CategoryData=[
         imgSrc:"https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg",
     },
     {
-        title:"Women's cloth",
-        name:"momen's clothing",
+        title:"Women's clothing",
+        name:"women's clothing",
         imgSrc:"https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg",
     },
     {

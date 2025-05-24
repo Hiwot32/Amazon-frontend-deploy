@@ -7,7 +7,7 @@ import ProductCard from '../../products/ProductCard'
 import proCss from '..//../products/products.module.css'
 
 function Results() {
-     const [result, setResult]=useState([]);
+    const [result, setResult]=useState([]);
     const {categoryName}=useParams();
 
 
@@ -19,7 +19,7 @@ function Results() {
     })
     }, [])
     
-  return (
+    return (
     
     <Layout>
         <h1 style={{padding:"25px"}}>Results</h1>
@@ -31,7 +31,7 @@ function Results() {
             ))}
         </div>
     </Layout>
-  )
+    )
 }
 
 export default Results

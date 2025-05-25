@@ -1,13 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { IoSearchSharp } from "react-icons/io5";
-import { MdShoppingCartCheckout } from "react-icons/md";
+import { BsCart2 } from "react-icons/bs";
 import { GrLocation } from "react-icons/gr";
 import { VscThreeBars } from "react-icons/vsc";
 import headerCss from "./header.module.css";
-
+import { DataContext } from '../DataProvider/DataProvider';
+import { Link } from 'react-router-dom';
+import Cart from '../pages/Cart/Cart';
 function Header() {
+    const [{basket}, dispatch]=useContext(DataContext)
+    const totalItem=basket?.reduce((amount,item)=>{
+        return item.amount+amount
+    }, 0)
   return (
-    <div>
+    <div className={headerCss.fixed}>
     <div className={headerCss.header_container}>
         <div className={headerCss.left_side}>
             <a  href="/">
@@ -67,13 +73,13 @@ function Header() {
             </div>
             </a>
 
-            <a href="/">
+            <Link to="/cart">
             <div className={headerCss.cart}>
-                <MdShoppingCartCheckout  size={39}/>
-                <span>0</span>
+                <BsCart2  size={39}/>
+                <span>{totalItem}</span>
 
             </div>
-            </a>
+            </Link>
 
         </div>
       

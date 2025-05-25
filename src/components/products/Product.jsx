@@ -19,7 +19,7 @@ function Product() {
     <div className={proCss.main_card}>
         {
             products.map((item)=>{
-               return <ProductCard product={item} key={item.id} />
+               return <ProductCard product={item} key={item.id} renderAdd={true}/>
             })
         }
       

@@ -3,29 +3,52 @@ import Rating from '@mui/material/Rating'
 import CurrencyFormat from '../CurrencyFormat/CurrencyFormat'
 import proCss from './products.module.css'
 import { Link } from 'react-router-dom'
+import { useContext } from 'react'
+import { DataContext } from '../DataProvider/DataProvider'
+import { Types } from '../../utilities/actionTypes'
 
 
-function ProductCard({product}) {
+function ProductCard({product,flex,productDes,renderAdd}) {
+    const {image, title, id, rating, price, description} = product;
+     
+    const [{state},dispatch]=useContext(DataContext)
+
+
+    const addToCart=()=>{
+        dispatch({
+            type:Types.ADD_TO_BASKET,
+            item:{
+                image, title, id, rating, price, description
+            }
+
+        })
+    }
+    
   return (
-    <div className={proCss.products_card}>
-        <Link to={`/products/${product.id}`}>
-            <img src={product.image} />
+    <div className={`${proCss.products_card} ${flex?proCss.product_flexed: ' '}`}>
+        <Link to={`/products/${id}`}>
+            <img src={image} />
         </Link>
+        <div>
         <div className={proCss.products_title}>
-            <h3>{product.title}</h3>
+            <h3>{title}</h3>
+            {productDes && <div style={{maxWidth:"700px"}}>{description}</div>}
         </div> 
         <div className={proCss.products_rating}>
-            <Rating value={product.rating?.rate} precision={0.1} />
-            <small>{product.rating?.count}</small>
-            {/* <p>{product.rating}</p> */}
+            <Rating value={rating?.rate} precision={0.1} />
+            <small>{rating?.count}</small>
         </div>
 
         <div>
-            <CurrencyFormat amount={7.3} />
+            <CurrencyFormat amount={price} />
         </div>
-        <button className={proCss.products_button}>
+        {
+            renderAdd && <button className={proCss.products_button} onClick={addToCart}>
             add to cart
         </button>
+        }
+        
+        </div>
       
     </div>
   )

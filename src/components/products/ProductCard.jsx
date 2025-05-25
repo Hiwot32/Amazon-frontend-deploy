@@ -39,7 +39,7 @@ function ProductCard({product,flex,productDes,renderAdd}) {
             <small>{rating?.count}</small>
         </div>
 
-        <div>
+        <div className={proCss.price} >
             <CurrencyFormat amount={price} />
         </div>
         {

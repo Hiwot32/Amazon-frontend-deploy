@@ -15,19 +15,20 @@
 }
 .products_button{
     width:100%;
-    border-radius: 10px;
-    border:none;
-    background-color: white;
-    border-radius: 10px;
-    border: none;
-    position: absolute;
     bottom: 0;
     left: 0;
+    background-color: white;
+    position: absolute;
+   border: none;
     color: white;
-    padding: px;
+    padding: 5px;
     cursor: pointer;
 }
 .products_button:hover{
+    
+     
+    border-radius: 10px;
+    border:none;
     color:black;
     background-color: #febd69;
 }
@@ -45,6 +46,9 @@
     grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
     margin:70px 130px 0 130px;
     
+}
+.price{
+    padding-bottom: 15px;
 }
 .product_flexed{
     display: flex;

@@ -31,7 +31,7 @@ function Results() {
     <p style={{padding:"25px" }}>{categoryName}</p>
          {isLoading?(<Loader />):( <div className={proCss.main_card}>
             {result?.map((product)=>(
-                <ProductCard key={product.id} product={product} productDes={false} renderAdd={false}/>
+                <ProductCard key={product.id} product={product} productDes={false} renderAdd={true}/>
             ))}
         </div>)}
        

@@ -53,16 +53,15 @@ function Header() {
                 </select>
                 </a>
             </div>
-             <a href="/">
+             <Link to="/auth">
             <div className={headerCss.sign}>
-               
                 <p>Hello, sign in</p>
                 <select>
                 <option>Account&Lists</option>
                 </select>
                 
             </div>
-            </a>
+            </Link>
             
             <a href="/">
             <div>

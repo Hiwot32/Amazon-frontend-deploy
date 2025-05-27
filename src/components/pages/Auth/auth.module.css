@@ -1,0 +1,64 @@
+.signPage{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo{
+    margin: 30px auto;
+}
+.logo img{
+    width:100px;
+    align-items: center;
+    object-fit: contain;
+}
+.form{
+    margin: 10px auto;
+    border:1px solid lightgrey;
+    border-radius: 5px;
+    width:350px;
+    padding: 20px;
+}
+.header{
+    margin-bottom: 20px;
+}
+.form input{
+    border-radius:3px;
+    background-color: white;
+    padding: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 10px 0;
+     border: 1px solid gray;
+    
+}
+.form input:focus{
+    outline: 1px solid skyblue;
+}
+.sign{
+    width:100%;
+    background-color: #f0b14b;
+    padding: 5px;
+    margin-top:15px ;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.sign:hover{
+    background-color: #c59240;
+}
+.form p{
+    font-size: 14px;
+    padding: 10px;
+}
+.create{
+    width:100%;
+    padding: 5px;
+    margin-top:10px ;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+.create:hover{
+    background-color: #d1cbcb;
+}

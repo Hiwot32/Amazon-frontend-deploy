@@ -6,9 +6,10 @@ import { VscThreeBars } from "react-icons/vsc";
 import headerCss from "./header.module.css";
 import { DataContext } from '../DataProvider/DataProvider';
 import { Link } from 'react-router-dom';
-import Cart from '../pages/Cart/Cart';
+import { auth } from '../../utilities/firebase';
+import { signOut } from 'firebase/auth';
 function Header() {
-    const [{basket}, dispatch]=useContext(DataContext)
+    const [{basket,user}, dispatch]=useContext(DataContext)
     const totalItem=basket?.reduce((amount,item)=>{
         return item.amount+amount
     }, 0)
@@ -53,24 +54,39 @@ function Header() {
                 </select>
                 </a>
             </div>
-             <Link to="/auth">
+             <Link to={!user && "/auth"}>
             <div className={headerCss.sign}>
-                <p>Hello, sign in</p>
-                <select>
-                <option>Account&Lists</option>
-                </select>
+                <div>
+                    {
+                        user?(
+                            <>
+                        <p>Hello, {user?.email?.split("@")[0]}</p>
+                        <span onClick={()=>signOut(auth)}>Sign Out</span>
+                            </>
+                    
+                    ):(
+                    <>
+                    <p>Hello, sign in</p>
+                          <span>Account&Lists</span>
+
+                          </>  
+                        )
+                        
+                    }
+
+                </div>
                 
             </div>
             </Link>
             
-            <a href="/">
+            <Link to="/orders">
             <div>
                 
                 <p>Returns</p>
                 <span>&Orders</span>
                 
             </div>
-            </a>
+            </Link>
 
             <Link to="/cart">
             <div className={headerCss.cart}>

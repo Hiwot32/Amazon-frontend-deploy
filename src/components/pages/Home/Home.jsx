@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from '../../Header/Header.jsx'
-import CarouselEffect from '../../carousel/carouselEffect.jsx'
+import CarouselEffect from '../../carousel/CarouselEffect.jsx'
 import Category from '../../category/Category.jsx'
 import Product from '../../products/Product.jsx'
 import Layout from '../../Layout/Layout.jsx'
